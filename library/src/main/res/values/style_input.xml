@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Input">
+        <attr name="inputIcon" format="reference" />
+        <attr name="inputClear" format="reference" />
+        <attr name="inputIconSize" format="dimension" />
+        <attr name="inputClearSize" format="dimension" />
+        <attr name="inputLabel" format="string" />
+        <attr name="inputLabelSize" format="dimension" />
+        <attr name="inputLabelColor" format="color" />
+        <attr name="inputTipType">
+            <enum name="normal" value="0" />
+            <enum name="error" value="1" />
+            <enum name="hint" value="2" />
+            <enum name="toast" value="3" />
+            <enum name="alert" value="4" />
+        </attr>
+        <attr name="inputTipEmpty" format="string" />
+        <attr name="inputTipPattern" format="string" />
+        <attr name="inputPattern" format="string" />
+        <attr name="inputShowSoftInputOnError" format="boolean" />
+    </declare-styleable>
+
+</resources>

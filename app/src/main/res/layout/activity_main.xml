@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:input="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10.0dip">
+
+
+    <com.eternal.widget.input.Input xmlns:input="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/in_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:hint="请输入用户名\\手机号"
+        android:maxLength="20"
+        android:padding="10.0dip"
+        android:singleLine="true"
+        input:inputClear="@drawable/ic_input_clear"
+        input:inputIcon="@drawable/ic_input_user"
+        input:inputShowSoftInputOnError="true"
+        input:inputTipEmpty="用户名不能为空"
+        input:inputTipPattern="用户名格式不合法"
+        input:inputTipType="alert" />
+
+    <com.eternal.widget.input.Input xmlns:input="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/in_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:hint="请输密码"
+        android:padding="10.0dip"
+        android:password="true"
+        android:singleLine="true"
+        input:inputClear="@drawable/ic_input_clear"
+        input:inputIcon="@drawable/ic_input_pwd"
+        input:inputPattern="[a-zA-Z0-9]{6,16}"
+        input:inputShowSoftInputOnError="true"
+        input:inputTipEmpty="密码不能为空"
+        input:inputTipPattern="密码为6-16位数字或密码组合"
+        input:inputTipType="alert" />
+
+    <Button
+        android:id="@+id/btn_verify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10.0dip"
+        android:enabled="true"
+        android:text="verify" />
+
+</LinearLayout>
