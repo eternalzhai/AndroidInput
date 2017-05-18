@@ -29,5 +29,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.2.0'
     testCompile 'junit:junit:4.12'
 
-    compile 'cn.pedant.sweetalert:library:1.3'
+    compile 'com.github.Eternal-Zhai:AndroidAlert:0.2'
 }

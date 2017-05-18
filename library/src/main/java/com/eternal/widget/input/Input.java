@@ -1,5 +1,6 @@
 package com.eternal.widget.input;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -23,7 +24,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
+import com.eternal.alert.base.BaseAlert;
+import com.eternal.alert.conventional.Alert;
 
 
 public class Input extends LinearLayout {
@@ -240,20 +242,20 @@ public class Input extends LinearLayout {
                 showSoftInputOnError();
                 break;
             case TIP_TYPE_ALERT:
-                //I want to use CharSequence tip value,because CharSequence can custom text stype,but sweetalertdialog library is String type
-                new SweetAlertDialog(getContext(), SweetAlertDialog.ERROR_TYPE).setTitleText((String) tip)
-                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                            @Override
-                            public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                sweetAlertDialog.dismissWithAnimation();
-                                postDelayed(new Runnable() {
-                                    public void run() {
-                                        mEdit.requestFocus();
-                                        showSoftInputOnError();
-                                    }
-                                }, 300);
-                            }
-                        }).show();
+                //if context is not a activity?
+                if (getContext() instanceof Activity)
+                    Alert.create(getContext(), Alert.ERROR_TYPE).title(tip).rightBtnClick(new BaseAlert.OnClick<Alert>() {
+                        @Override
+                        public void onClick(Alert alert, int i) {
+                            alert.dismiss();
+                            postDelayed(new Runnable() {
+                                public void run() {
+                                    mEdit.requestFocus();
+                                    showSoftInputOnError();
+                                }
+                            }, 300);
+                        }
+                    }).show();
                 break;
             default:
                 break;
